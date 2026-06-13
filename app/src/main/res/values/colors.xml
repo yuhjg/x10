@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="FF_E5E5E5">#E5E5E5</color>
+    <color name="FF_EBF5EF">#EBF5EF</color>
+    <color name="FF_999999">#999999</color>
+    <color name="FF_CCCCCC">#CCCCCC</color>
+    <color name="FF_F5F5F5">#F5F5F5</color>
+    <color name="FF_FAFAFA">#FAFAFA</color>
+    <color name="FF_666666">#666666</color>
+    <color name="FF_212121">#212121</color>
+    <color name="FF_333333">#333333</color>
+    <color name="FF_EEEEEE">#EEEEEE</color>
+    <color name="FF_202020">#202020</color>
+    <color name="FF_F1F1F1">#F1F1F1</color>
+    <color name="FF_A8A8A8">#A8A8A8</color>
+    <color name="FF_F8F8F8">#F8F8F8</color>
+    <color name="FF_C7C7CC">#C7C7CC</color>
+    <color name="FF_FBFBFB">#FBFBFB</color>
+    <color name="FF_009688">#009688</color>
+    <color name="FF_F2F2F2">#F2F2F2</color>      
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/FF_F2F2F2"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvConfigApiTest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="30dp"
+        android:text="测试地址：(测试阶段请直接引用)\n\nhttp://games.usbuydo.com"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:textSize="13sp"
+        android:id="@+id/btnConfigQuote"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_selector_05dp_main"
+        android:text="引用"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvConfigApiTest"
+        app:layout_constraintEnd_toEndOf="@+id/tvConfigApiTest"/>
+
+    <EditText
+        android:id="@+id/etConfigApiPath"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_radius_10dp_white"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="10dp"
+        android:singleLine="true"
+        android:text="http://games.usbuydo.com"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfigApiTest" />
+
+    <Button
+        android:id="@+id/btnConfigConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_selector_05dp_main"
+        android:gravity="center"
+        android:text="保存API"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etConfigApiPath" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="选择需要HOOK的应用"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfigConfirm" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

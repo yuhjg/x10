@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.cn.google">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="byg 1版" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="58" />
+        <meta-data
+            android:name="com.google.android.play.billingclient.version"
+            android:value="3.0.0" />
+
+        <provider
+            android:name=".provider.HookProvider"
+            android:authorities="google.hook.provider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConfigActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".LoginActivity"
+            android:launchMode="singleTask" />
+
+        <activity android:name="com.android.billingclient.api.ProxyBillingActivity" />
+
+        <activity
+            android:name="org.cn.google.hook_export.view.PayActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/alertDialogActivity">
+            <intent-filter>
+                <action android:name="org.cn.google.hook_export.view.PayActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.cn.google.hook_collect.view.CollectActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/alertDialogActivity">
+            <intent-filter>
+                <action android:name="org.cn.google.hook_collect.view.CollectActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    dependencies {
+        implementation 'androidx.multidex:multidex:2.0.1'
+    }
+
+
+    defaultConfig {
+        applicationId "org.cn.google"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.2.1"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    //配置自定义打包名称
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def fileName
+            def date = new Date()
+            //def formattedDate = date.format('yyyyMMddHHmm')
+            def formattedDate = date.format('yyyy_MM_dd')
+            if (variant.buildType.name == 'release') {
+                fileName = "BYG_${variant.mergedFlavor.versionName}_${formattedDate}_release.apk"
+            } else if (variant.buildType.name == 'debug') {
+                fileName = "BYG_${variant.mergedFlavor.versionName}_${formattedDate}_debug.apk"
+            }
+            outputFileName = fileName
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions{
+        exclude 'META-INF/rxjava.properties'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    //implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+    implementation 'com.blankj:utilcode:1.30.7'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    //implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+    //implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+
+    //implementation 'com.github.jeasonlzy:okhttp-OkGo:3.0.4'
+    compileOnly 'de.robv.android.xposed:api:82'
+    compileOnly 'de.robv.android.xposed:api:82:sources'
+
+    implementation 'com.android.billingclient:billing:3.0.0'
+}
